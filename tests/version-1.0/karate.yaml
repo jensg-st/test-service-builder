@@ -1,0 +1,18 @@
+url: ""
+functions:
+- type: knative-workflow
+  id: karate
+  image: gcr.io/direktiv/apps/karate:1.0
+states:
+- id: run-test
+  type: action
+  action:
+    function: karate
+    input:
+      commands:
+      - command: java -DtestURL=jq(.ip) -DtestmeSecret=jq(.secrets.testmeSecret) -Djens=jq(.secrets.jens)
+          -jar /karate.jar test.feature
+      - command: cat target/karate-reports/karate-summary-json.txt
+    secrets:
+    - testmeSecret
+    - jens

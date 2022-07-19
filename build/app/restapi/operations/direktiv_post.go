@@ -140,6 +140,10 @@ func runCommand0(ctx context.Context,
 
 	var cmds []map[string]interface{}
 
+	if params.Body == nil {
+		return cmds, nil
+	}
+
 	for a := range params.Body.Commands {
 
 		ls := &LoopStruct0{

@@ -196,6 +196,10 @@ func init() {
           {
             "description": "This is a secret value",
             "name": "testmeSecret"
+          },
+          {
+            "description": "gerke",
+            "name": "jens"
           }
         ]
       },
@@ -366,6 +370,10 @@ func init() {
           {
             "description": "This is a secret value",
             "name": "testmeSecret"
+          },
+          {
+            "description": "gerke",
+            "name": "jens"
           }
         ]
       },
