@@ -9,7 +9,7 @@ Background:
 
 Scenario: get request
 
-	Given url 'http://' + karate.properties['testURL']
+	Given url karate.properties['testURL']
 
 	And path '/'
 	And header Direktiv-ActionID = 'development'
