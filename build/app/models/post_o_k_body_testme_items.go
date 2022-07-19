@@ -14,10 +14,10 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PostOKBodyJensItems post o k body jens items
+// PostOKBodyTestmeItems post o k body testme items
 //
-// swagger:model postOKBodyJensItems
-type PostOKBodyJensItems struct {
+// swagger:model postOKBodyTestmeItems
+type PostOKBodyTestmeItems struct {
 
 	// result
 	// Required: true
@@ -28,8 +28,8 @@ type PostOKBodyJensItems struct {
 	Success *bool `json:"success"`
 }
 
-// Validate validates this post o k body jens items
-func (m *PostOKBodyJensItems) Validate(formats strfmt.Registry) error {
+// Validate validates this post o k body testme items
+func (m *PostOKBodyTestmeItems) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateResult(formats); err != nil {
@@ -46,7 +46,7 @@ func (m *PostOKBodyJensItems) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *PostOKBodyJensItems) validateResult(formats strfmt.Registry) error {
+func (m *PostOKBodyTestmeItems) validateResult(formats strfmt.Registry) error {
 
 	if m.Result == nil {
 		return errors.Required("result", "body", nil)
@@ -55,7 +55,7 @@ func (m *PostOKBodyJensItems) validateResult(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *PostOKBodyJensItems) validateSuccess(formats strfmt.Registry) error {
+func (m *PostOKBodyTestmeItems) validateSuccess(formats strfmt.Registry) error {
 
 	if err := validate.Required("success", "body", m.Success); err != nil {
 		return err
@@ -64,13 +64,13 @@ func (m *PostOKBodyJensItems) validateSuccess(formats strfmt.Registry) error {
 	return nil
 }
 
-// ContextValidate validates this post o k body jens items based on context it is used
-func (m *PostOKBodyJensItems) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validates this post o k body testme items based on context it is used
+func (m *PostOKBodyTestmeItems) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (m *PostOKBodyJensItems) MarshalBinary() ([]byte, error) {
+func (m *PostOKBodyTestmeItems) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -78,8 +78,8 @@ func (m *PostOKBodyJensItems) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *PostOKBodyJensItems) UnmarshalBinary(b []byte) error {
-	var res PostOKBodyJensItems
+func (m *PostOKBodyTestmeItems) UnmarshalBinary(b []byte) error {
+	var res PostOKBodyTestmeItems
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

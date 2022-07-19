@@ -23,13 +23,13 @@ func main() {
 		log.Fatalln(err)
 	}
 
-	api := operations.NewJensAPI(swaggerSpec)
+	api := operations.NewTestmeAPI(swaggerSpec)
 	server := restapi.NewServer(api)
 	defer server.Shutdown()
 
 	parser := flags.NewParser(server, flags.Default)
-	parser.ShortDescription = "jens"
-	parser.LongDescription = "Run jens in Direktiv"
+	parser.ShortDescription = "testme"
+	parser.LongDescription = "Run testme in Direktiv"
 	server.ConfigureFlags()
 	for _, optsGroup := range api.CommandLineOptionsGroups {
 		_, err := parser.AddGroup(optsGroup.ShortDescription, optsGroup.LongDescription, optsGroup.Options)

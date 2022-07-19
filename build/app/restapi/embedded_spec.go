@@ -29,19 +29,19 @@ func init() {
   ],
   "swagger": "2.0",
   "info": {
-    "description": "Run jens in Direktiv",
-    "title": "jens",
+    "description": "Run testme in Direktiv",
+    "title": "testme",
     "version": "1.0",
     "x-direktiv-meta": {
       "categories": [
         "unknown"
       ],
-      "container": "gcr.io/direktiv/apps/jens",
-      "issues": "https://github.com/direktiv-apps/jens/issues",
+      "container": "gcr.io/direktiv/apps/testme",
+      "issues": "https://github.com/direktiv-apps/testme/issues",
       "license": "[Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0)",
-      "long-description": "Run jens in Direktiv as a function",
+      "long-description": "Run testme in Direktiv as a function",
       "maintainer": "[direktiv.io](https://www.direktiv.io) ",
-      "url": "https://github.com/direktiv-apps/jens"
+      "url": "https://github.com/direktiv-apps/testme"
     }
   },
   "paths": {
@@ -115,7 +115,7 @@ func init() {
             "schema": {
               "type": "object",
               "properties": {
-                "jens": {
+                "testme": {
                   "type": "array",
                   "items": {
                     "type": "object",
@@ -136,7 +136,7 @@ func init() {
               }
             },
             "examples": {
-              "jens": [
+              "testme": [
                 {
                   "result": null,
                   "success": true
@@ -174,7 +174,7 @@ func init() {
               "silent": "{{ .Item.Silent }}"
             }
           ],
-          "output": "{\n  \"jens\": {{ index . 0 | toJson }}\n}\n"
+          "output": "{\n  \"testme\": {{ index . 0 | toJson }}\n}\n"
         },
         "x-direktiv-errors": {
           "io.direktiv.command.error": "Command execution failed",
@@ -183,15 +183,21 @@ func init() {
         },
         "x-direktiv-examples": [
           {
-            "content": "- id: jens\n  type: action\n  action:\n    function: jens\n    input: \n      commands:\n      - command: Example of running jens",
+            "content": "- id: testme\n  type: action\n  action:\n    function: testme\n    input: \n      commands:\n      - command: Example of running testme",
             "title": "Basic"
           },
           {
-            "content": "- id: jens\n  type: action\n  action:\n    function: jens\n    input: \n      files:\n      - name: hello.txt\n        data: Hello World\n        mode: '0755'\n      commands:\n      - command: Example of running jens",
+            "content": "- id: testme\n  type: action\n  action:\n    function: testme\n    input: \n      files:\n      - name: hello.txt\n        data: Hello World\n        mode: '0755'\n      commands:\n      - command: Example of running testme",
             "title": "Advanced"
           }
         ],
-        "x-direktiv-function": "functions:\n- id: jens\n  image: gcr.io/direktiv/apps/jens:1.0\n  type: knative-workflow"
+        "x-direktiv-function": "functions:\n- id: testme\n  image: gcr.io/direktiv/apps/testme:1.0\n  type: knative-workflow",
+        "x-direktiv-secrets": [
+          {
+            "description": "This is a secret value",
+            "name": "testmeSecret"
+          }
+        ]
       },
       "delete": {
         "parameters": [
@@ -252,19 +258,19 @@ func init() {
   ],
   "swagger": "2.0",
   "info": {
-    "description": "Run jens in Direktiv",
-    "title": "jens",
+    "description": "Run testme in Direktiv",
+    "title": "testme",
     "version": "1.0",
     "x-direktiv-meta": {
       "categories": [
         "unknown"
       ],
-      "container": "gcr.io/direktiv/apps/jens",
-      "issues": "https://github.com/direktiv-apps/jens/issues",
+      "container": "gcr.io/direktiv/apps/testme",
+      "issues": "https://github.com/direktiv-apps/testme/issues",
       "license": "[Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0)",
-      "long-description": "Run jens in Direktiv as a function",
+      "long-description": "Run testme in Direktiv as a function",
       "maintainer": "[direktiv.io](https://www.direktiv.io) ",
-      "url": "https://github.com/direktiv-apps/jens"
+      "url": "https://github.com/direktiv-apps/testme"
     }
   },
   "paths": {
@@ -300,7 +306,7 @@ func init() {
               "$ref": "#/definitions/postOKBody"
             },
             "examples": {
-              "jens": [
+              "testme": [
                 {
                   "result": null,
                   "success": true
@@ -338,7 +344,7 @@ func init() {
               "silent": "{{ .Item.Silent }}"
             }
           ],
-          "output": "{\n  \"jens\": {{ index . 0 | toJson }}\n}\n"
+          "output": "{\n  \"testme\": {{ index . 0 | toJson }}\n}\n"
         },
         "x-direktiv-errors": {
           "io.direktiv.command.error": "Command execution failed",
@@ -347,15 +353,21 @@ func init() {
         },
         "x-direktiv-examples": [
           {
-            "content": "- id: jens\n  type: action\n  action:\n    function: jens\n    input: \n      commands:\n      - command: Example of running jens",
+            "content": "- id: testme\n  type: action\n  action:\n    function: testme\n    input: \n      commands:\n      - command: Example of running testme",
             "title": "Basic"
           },
           {
-            "content": "- id: jens\n  type: action\n  action:\n    function: jens\n    input: \n      files:\n      - name: hello.txt\n        data: Hello World\n        mode: '0755'\n      commands:\n      - command: Example of running jens",
+            "content": "- id: testme\n  type: action\n  action:\n    function: testme\n    input: \n      files:\n      - name: hello.txt\n        data: Hello World\n        mode: '0755'\n      commands:\n      - command: Example of running testme",
             "title": "Advanced"
           }
         ],
-        "x-direktiv-function": "functions:\n- id: jens\n  image: gcr.io/direktiv/apps/jens:1.0\n  type: knative-workflow"
+        "x-direktiv-function": "functions:\n- id: testme\n  image: gcr.io/direktiv/apps/testme:1.0\n  type: knative-workflow",
+        "x-direktiv-secrets": [
+          {
+            "description": "This is a secret value",
+            "name": "testmeSecret"
+          }
+        ]
       },
       "delete": {
         "parameters": [
@@ -405,16 +417,16 @@ func init() {
     "postOKBody": {
       "type": "object",
       "properties": {
-        "jens": {
+        "testme": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/postOKBodyJensItems"
+            "$ref": "#/definitions/postOKBodyTestmeItems"
           }
         }
       },
       "x-go-gen-location": "operations"
     },
-    "postOKBodyJensItems": {
+    "postOKBodyTestmeItems": {
       "type": "object",
       "required": [
         "success",

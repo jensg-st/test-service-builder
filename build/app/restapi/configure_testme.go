@@ -17,9 +17,9 @@ import (
 	"app/restapi/operations"
 )
 
-//go:generate swagger generate server --target ../../app --name Jens --spec ../../../swagger.yaml --template-dir /tmp/test-service-builder/build/templates --principal interface{}
+//go:generate swagger generate server --target ../../app --name Testme --spec ../../../swagger.yaml --template-dir /tmp/test-service-builder/build/templates --principal interface{}
 
-func configureFlags(api *operations.JensAPI) {
+func configureFlags(api *operations.TestmeAPI) {
 	// api.CommandLineOptionsGroups = []swag.CommandLineOptionsGroup{ ... }
 }
 
@@ -113,7 +113,7 @@ func serveError(rw http.ResponseWriter, r *http.Request, err error) {
 
 }
 
-func configureAPI(api *operations.JensAPI) http.Handler {
+func configureAPI(api *operations.TestmeAPI) http.Handler {
 	// configure the api here
 	api.ServeError = serveError
 

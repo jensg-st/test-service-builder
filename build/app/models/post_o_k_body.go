@@ -19,15 +19,15 @@ import (
 // swagger:model postOKBody
 type PostOKBody struct {
 
-	// jens
-	Jens []*PostOKBodyJensItems `json:"jens"`
+	// testme
+	Testme []*PostOKBodyTestmeItems `json:"testme"`
 }
 
 // Validate validates this post o k body
 func (m *PostOKBody) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateJens(formats); err != nil {
+	if err := m.validateTestme(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -37,22 +37,22 @@ func (m *PostOKBody) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *PostOKBody) validateJens(formats strfmt.Registry) error {
-	if swag.IsZero(m.Jens) { // not required
+func (m *PostOKBody) validateTestme(formats strfmt.Registry) error {
+	if swag.IsZero(m.Testme) { // not required
 		return nil
 	}
 
-	for i := 0; i < len(m.Jens); i++ {
-		if swag.IsZero(m.Jens[i]) { // not required
+	for i := 0; i < len(m.Testme); i++ {
+		if swag.IsZero(m.Testme[i]) { // not required
 			continue
 		}
 
-		if m.Jens[i] != nil {
-			if err := m.Jens[i].Validate(formats); err != nil {
+		if m.Testme[i] != nil {
+			if err := m.Testme[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("jens" + "." + strconv.Itoa(i))
+					return ve.ValidateName("testme" + "." + strconv.Itoa(i))
 				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("jens" + "." + strconv.Itoa(i))
+					return ce.ValidateName("testme" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -67,7 +67,7 @@ func (m *PostOKBody) validateJens(formats strfmt.Registry) error {
 func (m *PostOKBody) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.contextValidateJens(ctx, formats); err != nil {
+	if err := m.contextValidateTestme(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -77,16 +77,16 @@ func (m *PostOKBody) ContextValidate(ctx context.Context, formats strfmt.Registr
 	return nil
 }
 
-func (m *PostOKBody) contextValidateJens(ctx context.Context, formats strfmt.Registry) error {
+func (m *PostOKBody) contextValidateTestme(ctx context.Context, formats strfmt.Registry) error {
 
-	for i := 0; i < len(m.Jens); i++ {
+	for i := 0; i < len(m.Testme); i++ {
 
-		if m.Jens[i] != nil {
-			if err := m.Jens[i].ContextValidate(ctx, formats); err != nil {
+		if m.Testme[i] != nil {
+			if err := m.Testme[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("jens" + "." + strconv.Itoa(i))
+					return ve.ValidateName("testme" + "." + strconv.Itoa(i))
 				} else if ce, ok := err.(*errors.CompositeError); ok {
-					return ce.ValidateName("jens" + "." + strconv.Itoa(i))
+					return ce.ValidateName("testme" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

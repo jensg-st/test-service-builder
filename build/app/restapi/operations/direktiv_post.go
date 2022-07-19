@@ -106,7 +106,7 @@ func PostDirektivHandle(params PostParams) middleware.Responder {
 	accParams.Commands = paramsCollector
 
 	s, err := templateString(`{
-  "jens": {{ index . 0 | toJson }}
+  "testme": {{ index . 0 | toJson }}
 }
 `, responses)
 	if err != nil {

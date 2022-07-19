@@ -1,20 +1,20 @@
 swagger: "2.0"
 info:
-  description: Run jens in Direktiv
-  title: jens
+  description: Run testme in Direktiv
+  title: testme
   version: "1.0"
   x-direktiv-meta:
-    container: gcr.io/direktiv/apps/jens
+    container: gcr.io/direktiv/apps/testme
     maintainer: |-
       [direktiv.io](https://www.direktiv.io) 
-    issues: https://github.com/direktiv-apps/jens/issues
-    url: https://github.com/direktiv-apps/jens  
+    issues: https://github.com/direktiv-apps/testme/issues
+    url: https://github.com/direktiv-apps/testme  
     categories:
     - unknown
     license: |-
       [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0)
     long-description: >-
-      Run jens in Direktiv as a function
+      Run testme in Direktiv as a function
 consumes:
 - application/json
 produces:
@@ -87,33 +87,36 @@ paths:
       # direktiv code generation is configured here
       x-direktiv-function: |-
         functions:
-        - id: jens
-          image: gcr.io/direktiv/apps/jens:1.0
+        - id: testme
+          image: gcr.io/direktiv/apps/testme:1.0
           type: knative-workflow
       x-direktiv-examples:
         # ADD MORE EXAMPLES HERE
         - title: Basic
           content: |-
-            - id: jens
+            - id: testme
               type: action
               action:
-                function: jens
+                function: testme
                 input: 
                   commands:
-                  - command: Example of running jens
+                  - command: Example of running testme
         - title: Advanced
           content: |-
-            - id: jens
+            - id: testme
               type: action
               action:
-                function: jens
+                function: testme
                 input: 
                   files:
                   - name: hello.txt
                     data: Hello World
                     mode: '0755'
                   commands:
-                  - command: Example of running jens
+                  - command: Example of running testme
+      x-direktiv-secrets:
+        - name: testmeSecret
+          description: This is a secret value
       x-direktiv:  
         cmds:
         - action: foreach
@@ -124,7 +127,7 @@ paths:
           continue: '{{ .Item.Continue }}'
         output: |
           {
-            "jens": {{ index . 0 | toJson }}
+            "testme": {{ index . 0 | toJson }}
           }
       x-direktiv-errors:
         io.direktiv.command.error: Command execution failed
@@ -134,7 +137,7 @@ paths:
         200:
           description: List of executed commands.
           examples:
-            jens:
+            testme:
             - result: # EXAMPLE RESULT HERE
               success: true
             - result: #  EXAMPLE RESULT HERE
@@ -142,7 +145,7 @@ paths:
           schema:
             type: object
             properties:
-              jens:
+              testme:
                 type: array
                 items:
                   type: object

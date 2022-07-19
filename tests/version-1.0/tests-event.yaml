@@ -1,24 +1,24 @@
 url: ""
 functions:
 - type: knative-workflow
-  id: jens
-  image: gcr.io/direktiv/apps/jens:1.0
+  id: testme
+  image: gcr.io/direktiv/apps/testme:1.0
 states:
 - id: state0
   type: action
   action:
-    function: jens
+    function: testme
     input:
       commands:
-      - command: Example of running jens
+      - command: Example of running testme
   transition: state1
 - id: state1
   type: action
   action:
-    function: jens
+    function: testme
     input:
       commands:
-      - command: Example of running jens
+      - command: Example of running testme
       files:
       - data: Hello World
         mode: "0755"
@@ -28,5 +28,5 @@ start:
   event:
     type: io.direktiv.function.test
     context:
-      function: jens
+      function: testme
       version: "1.0"
