@@ -12,7 +12,9 @@ states:
       commands:
       - command: java -DtestURL=jq(.host) -DtestmeSecret=jq(.secrets.testmeSecret)
           -Djens=jq(.secrets.jens) -jar /karate.jar test.feature
+        print: false
       - command: cat target/karate-reports/karate-summary-json.txt
+      logging: info
     secrets:
     - testmeSecret
     - jens
