@@ -16,3 +16,6 @@ states:
     secrets:
     - testmeSecret
     - jens
+    files:
+    - key: test.feature
+      scope: workflow
