@@ -1,0 +1,32 @@
+url: ""
+functions:
+- type: knative-workflow
+  id: jens
+  image: gcr.io/direktiv/apps/jens:1.0
+states:
+- id: state0
+  type: action
+  action:
+    function: jens
+    input:
+      commands:
+      - command: Example of running jens
+  transition: state1
+- id: state1
+  type: action
+  action:
+    function: jens
+    input:
+      commands:
+      - command: Example of running jens
+      files:
+      - data: Hello World
+        mode: "0755"
+        name: hello.txt
+start:
+  type: event
+  event:
+    type: io.direktiv.function.test
+    context:
+      function: jens
+      version: "1.0"
