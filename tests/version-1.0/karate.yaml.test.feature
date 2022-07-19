@@ -3,13 +3,13 @@ Feature: Text Function
 
 # The secrects can be used in the payload with the following syntax #(mysecretname)
 Background:
-* def testmeSecret = java.lang.System.getenv('testmeSecret')
-* def jens = java.lang.System.getenv('jens')
+* def testmeSecret = karate.properties('testmeSecret')
+* def jens = karate.properties('jens')
 
 
 Scenario: get request
 
-	Given url 'http://' + java.lang.System.getenv('testURL')
+	Given url 'http://' + karate.properties('testURL')
 
 	And path '/'
 	And header Direktiv-ActionID = 'development'
