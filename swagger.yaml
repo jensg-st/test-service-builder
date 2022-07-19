@@ -115,8 +115,8 @@ paths:
                   commands:
                   - command: Example of running testme
       x-direktiv-secrets:
-        - name: testmeSecret
-          description: This is a secret value
+        # - name: testmeSecret
+        #   description: This is a secret value
       x-direktiv:  
         cmds:
         - action: foreach

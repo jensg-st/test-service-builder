@@ -52,7 +52,8 @@ functions:
    ### Secrets
 
 
-- **testmeSecret**: This is a secret value
+*No secrets required*
+
 
 
 
